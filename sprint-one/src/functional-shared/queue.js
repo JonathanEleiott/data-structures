@@ -12,6 +12,18 @@ var Queue = function() {
 
 var queueMethods = {};
 
+queueMethods.enqueue = function (value) {
+  // body...
+  this.howMany++;
+};
+
+queueMethods.dequeue = function () {
+  // body...
+  if (this.howMany > 0) {
+    this.howMany--;
+  }
+};
+
 queueMethods.size = function () {
   // body...
   return this.howMany;
