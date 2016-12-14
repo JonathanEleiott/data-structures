@@ -4,6 +4,7 @@ var Stack = function() {
   var instance = {};
 
   instance.length = 0;
+  instance.storage = {};
 
   _.extend(instance, stackMethods);
   return instance;
@@ -16,13 +17,25 @@ stackMethods.size = function () {
   return this.length;
 };
 
-stackMethods.push = function () {
+stackMethods.push = function (value) {
+  this.storage[this.length] = value;
   this.length++;
 };
 
 stackMethods.pop = function () {
   // body...
+  var result = this.storage[this.length - 1];
+  delete this.storage[this.length - 1];
+
   if (this.length > 0) {
     this.length--;
   }
+
+  return result;
 };
+
+// stack.push('a');
+// stack.push('b');
+// stack.push('c');
+// stack.pop();
+// expect(stack.pop()).to.equal('b');
