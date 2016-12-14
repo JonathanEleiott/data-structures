@@ -4,6 +4,7 @@ var Stack = function() {
   var instance = Object.create(stackMethods);
   
   instance.howMany = 0;
+  instance.storage = {};
 
   return instance;
 };
@@ -15,11 +16,15 @@ stackMethods.size = function () {
 };
 
 stackMethods.push = function (value) {
+  this.storage[this.howMany] = value;
   this.howMany++;
 };
 
 stackMethods.pop = function () {
+  var result = this.storage[this.howMany - 1];
+  delete this.storage[this.howMany - 1];
   if (this.howMany > 0) {
     this.howMany--;
   }
-}
+  return result;
+};
