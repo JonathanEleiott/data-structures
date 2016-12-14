@@ -15,3 +15,14 @@ stackMethods.size = function () {
   // body...
   return this.length;
 };
+
+stackMethods.push = function () {
+  this.length++;
+};
+
+stackMethods.pop = function () {
+  // body...
+  if (this.length > 0) {
+    this.length--;
+  }
+};
