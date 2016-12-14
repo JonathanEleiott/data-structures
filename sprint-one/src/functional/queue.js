@@ -7,13 +7,21 @@ var Queue = function() {
   // Implement the methods below
 
   someInstance.enqueue = function(value) {
+    storage[size] = value;
     size++;
   };
 
   someInstance.dequeue = function() {
+
     if (size > 0) {
+      var result = storage[0];
+      delete storage[0];
+      for (var i = 0; i < size; i++) {
+        storage[i] = storage[i + 1];
+      }
       size--;
     }
+    return result;
   };
 
   someInstance.size = function() {
@@ -22,3 +30,10 @@ var Queue = function() {
 
   return someInstance;
 };
+
+
+queue.enqueue('a');
+queue.enqueue('b');
+queue.dequeue();
+queue.enqueue('c');
+expect(queue.dequeue()).to.equal('b');
