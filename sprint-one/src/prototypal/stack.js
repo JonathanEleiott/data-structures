@@ -12,4 +12,14 @@ var stackMethods = {};
 
 stackMethods.size = function () {
   return this.howMany;
+};
+
+stackMethods.push = function (value) {
+  this.howMany++;
+};
+
+stackMethods.pop = function () {
+  if (this.howMany > 0) {
+    this.howMany--;
+  }
 }
