@@ -32,8 +32,8 @@ var Queue = function() {
 };
 
 
-queue.enqueue('a');
-queue.enqueue('b');
-queue.dequeue();
-queue.enqueue('c');
-expect(queue.dequeue()).to.equal('b');
+// queue.enqueue('a');
+// queue.enqueue('b');
+// queue.dequeue();
+// queue.enqueue('c');
+// expect(queue.dequeue()).to.equal('b');

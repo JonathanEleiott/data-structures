@@ -5,6 +5,7 @@ var Queue = function() {
 
   instance.length = 0;
   instance.storage = {};
+  instance.head = 0;
 
   return instance;
 };
@@ -14,3 +15,22 @@ var queueMethods = {};
 queueMethods.size = function () {
   return this.length;
 };
+
+queueMethods.enqueue = function (value) {
+  // body...
+  this.storage[this.length] = value;
+  this.length++;
+};
+
+queueMethods.dequeue = function () {
+  // body...
+  var result = this.storage[this.head];
+  
+  if (this.length > 0) {
+    this.length--;
+  }
+
+  this.head++;
+  return result;
+};
+
