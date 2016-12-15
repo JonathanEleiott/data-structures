@@ -18,19 +18,34 @@ queueMethods.size = function () {
 
 queueMethods.enqueue = function (value) {
   // body...
-  this.storage[this.length] = value;
-  this.length++;
+  this.storage[this.length + this.head] = value;
+  this.length = 0;
+  
+  for (var key in this.storage) {
+    this.length++;
+  }
 };
 
 queueMethods.dequeue = function () {
   // body...
   var result = this.storage[this.head];
+  delete this.storage[this.head];
   
   if (this.length > 0) {
     this.length--;
   }
 
   this.head++;
+  this.length = 0;
+  
+  for (var key in this.storage) {
+    this.length++;
+  }
+
   return result;
 };
 
+// queue.enqueue('a');
+// expect(queue.dequeue()).to.equal('a');
+// queue.enqueue('b');
+// expect(queue.dequeue()).to.equal('b');
