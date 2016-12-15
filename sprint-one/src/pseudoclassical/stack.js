@@ -9,6 +9,16 @@ Stack.prototype.size = function () {
   return this.howMany;
 };
 
+Stack.prototype.push = function (value) {
+  this.howMany++;
+};
+
+Stack.prototype.pop = function () {
+  if (this.howMany > 0) {
+    this.howMany--;
+  }
+};
+
 
 
 
