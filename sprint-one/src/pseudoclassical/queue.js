@@ -9,15 +9,26 @@ var Queue = function() {
 
 Queue.prototype.enqueue = function(value) {
   // body...
-  this.storage[length] = value;
+  this.storage[this.length + this.head] = value;
   this.length++;
 };
 
 Queue.prototype.dequeue = function() {
-
+  var result = this.storage[this.head];
+  delete this.storage[this.head];
+  if (this.length > 0) {
+    this.length--;
+  }
+  this.head++;
+  return result;
 };
 
 Queue.prototype.size = function() {
   return this.length;
 };
 
+// queue.enqueue('a');
+// queue.enqueue('b');
+// queue.dequeue();
+// queue.enqueue('c');
+// expect(queue.dequeue()).to.equal('b');
