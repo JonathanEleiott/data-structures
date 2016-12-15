@@ -2,8 +2,11 @@ var LinkedList = function() {
   var list = {};
   list.head = null;
   list.tail = null;
+  var storage = {};
 
   list.addToTail = function(value) {
+    var temp = Node(value);
+    list.tail = temp;
   };
 
   list.removeHead = function() {
@@ -23,6 +26,8 @@ var Node = function(value) {
 
   return node;
 };
+
+
 
 /*
  * Complexity: What is the time complexity of the above functions?
