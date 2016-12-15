@@ -71,5 +71,16 @@ describe('linkedList', function() {
     expect(linkedList.contains(7)).to.equal(false);
   });
 
+  it('should allow adding two tails and then removing two heads and return head and tail as null', function() {
+    linkedList.addToTail(10);
+    linkedList.addToTail(19);
+    linkedList.removeHead();
+    linkedList.removeHead();
+    linkedList.removeHead();
+    console.log('head', linkedList.head);
+    console.log('tail', linkedList.tail);
+    expect(linkedList.head).to.equal(null);
+    expect(linkedList.tail).to.equal(null);
+  });
 
 });
