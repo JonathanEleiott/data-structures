@@ -10,13 +10,17 @@ Stack.prototype.size = function () {
 };
 
 Stack.prototype.push = function (value) {
+  this.storage[this.howMany] = value;
   this.howMany++;
 };
 
 Stack.prototype.pop = function () {
+  var result = this.storage[this.howMany - 1];
+  delete this.storage[this.howMany - 1];
   if (this.howMany > 0) {
     this.howMany--;
   }
+  return result;
 };
 
 
