@@ -64,6 +64,13 @@ Graph.prototype.forEachNode = function(cb) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+    addNode : constant, because no matter how many nodes there are it will take same amount of operations.
+    contains : linear, because it will have to check each node to see if it contains proper value.
+    removeNode : linear, because it must loop through each key in order to remove the proper node from its array.
+    hasEdge : linear, because the fromNode has to loop through its array of edges to if it contains toNode.
+    addEdge : linear, because it will loop through the nodes and push the value of the other node.
+    removeEdge : linear, because it will loop through the nodes and set the value of the other node to null.
+    forEachNode : linear, because it will loop through the nodes and call the cb function on each node.
  */
 
 // var connectToFive = function(item) {
