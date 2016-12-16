@@ -60,14 +60,7 @@ HashTable.prototype.remove = function(k) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ The insert function uses linear time complexity because it loops through the buckets to see if the key is already there.
+ The retrieve function uses linear time complexity because it loops through the buckets to find the value of the key.
+ The remove function uses linear time complexity because it loops through the buckets to find the proper key to remove the tuple.
  */
- //AssertionError: expected undefined to equal 'val2'
-// var v1 = 'val1';
-// var v2 = 'val2';
-// var oldHashFunction = window.getIndexBelowMaxForKey;
-// window.getIndexBelowMaxForKey = function() { return 0; };
-// hashTable.insert(v1, v1);
-// hashTable.insert(v2, v2);
-// expect(hashTable.retrieve(v1)).to.equal(v1);
-// expect(hashTable.retrieve(v2)).to.equal(v2);
-// window.getIndexBelowMaxForKey = oldHashFunction;
