@@ -77,8 +77,6 @@ describe('linkedList', function() {
     linkedList.removeHead();
     linkedList.removeHead();
     linkedList.removeHead();
-    console.log('head', linkedList.head);
-    console.log('tail', linkedList.tail);
     expect(linkedList.head).to.equal(null);
     expect(linkedList.tail).to.equal(null);
   });
