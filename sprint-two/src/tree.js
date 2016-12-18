@@ -28,6 +28,10 @@ treeMethods.contains = function(target) {
     }
   }
   return false;
+
+  // return this.value === target || _.any(this.children, function(child) { 
+  //   return child.contains(target); 
+  // }); 
 };
 
 

@@ -25,10 +25,6 @@ setPrototype.remove = function(item) {
       delete this._storage[key];
     }
   }
-  // if (this._storage[key]) {
-  //   delete this._storage[key];
-  // }
-  //let's ask this to help desk or search;
 
 };
 

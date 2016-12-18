@@ -24,4 +24,20 @@ describe('set', function() {
     expect(set.contains('Mel Gibson')).to.equal(false);
   });
 
+  it('should work with numbers', function() {
+    set.add(1);
+    set.add(2);
+    set.remove(2);
+    expect(set.contains(2)).to.equal(false);
+  });
+
+  it('should allow multiple additions of the same value, but remove all instances when remove is called', function() {
+    set.add('monkey');
+    set.add('gorilla');
+    set.add('monkey');
+    set.remove('monkey');
+    expect(set.contains('monkey')).to.equal(false);
+  });
+
+
 });

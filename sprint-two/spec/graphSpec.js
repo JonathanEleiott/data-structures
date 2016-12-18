@@ -68,4 +68,41 @@ describe('graph', function() {
     expect(graph.hasEdge(3, 5)).to.equal(true);
     expect(graph.hasEdge(5, 5)).to.equal(true);
   });
+
+  it('should work with string values', function() {
+    graph.addNode('mark');
+    graph.addNode('jon');
+    graph.addNode('marcus');
+    graph.addNode('alison');
+    graph.addNode('will');
+    graph.addEdge('mark', 'jon');
+    graph.addEdge('jon', 'will');
+    expect(graph.hasEdge('jon', 'mark')).to.equal(true);
+    expect(graph.hasEdge('mark', 'will')).to.equal(false);
+  });
+
+  it('should not override a node if the node already exists', function() {
+    graph.addNode(6);
+    graph.addNode('bunnies');
+    graph.addNode('elephants');
+    graph.addNode(56);
+    graph.addEdge('bunnies', 'elephants');
+    graph.addEdge('bunnies', 6);
+    graph.addNode('bunnies');
+    expect(graph.hasEdge('bunnies', 'elephants')).to.equal(true);
+  });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+

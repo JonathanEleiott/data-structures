@@ -41,4 +41,21 @@ describe('tree', function() {
     expect(tree.contains(8)).to.equal(true);
   });
 
+  it('should allow a string as a value', function() {
+    tree.addChild('froggy');
+    tree.addChild('catty');
+    tree.children[0].addChild('doggy');
+    tree.children[0].addChild('bunny');
+    tree.children[0].children[0].addChild('babo');
+    expect(tree.contains('bunny')).to.equal(true);
+    expect(tree.contains('jaguar')).to.equal(false);
+  });
+
+  it('should allow a value with null and contains works with null value', function() {
+    tree.addChild(null);
+    tree.children[0].addChild('iDontHaveMom');
+    expect(tree.contains(null)).to.equal(true);
+    expect(tree.contains('iDontHaveMom')).to.equal(true);
+  });
+
 });

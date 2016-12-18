@@ -8,8 +8,9 @@ var Graph = function() {
 
 // Add a node to the graph, passing in the node's value.
 Graph.prototype.addNode = function(node) {
-  
-  this.nodes[node] = [];
+  this.contains(node) ? true : this.nodes[node] = [];
+
+    
 };
 
 // Return a boolean value indicating if the value passed to contains is represented in the graph.
